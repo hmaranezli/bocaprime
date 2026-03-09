@@ -43,11 +43,16 @@ nav.scrolled .nav-logo img{height:32px;}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;background-size:cover;background-position:center;}
 .slide.active{opacity:1;}
 .slide-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(6,16,30,0.88) 0%,rgba(6,16,30,0.55) 55%,rgba(6,16,30,0.25) 100%);}
-.slide:nth-child(1){background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=80');}
-.slide:nth-child(2){background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1800&q=80');}
-.slide:nth-child(3){background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1800&q=80');}
-.slide:nth-child(4){background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=80');}
-.slide:nth-child(5){background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1800&q=80');}
+.slide:nth-child(1){background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=90');}
+.slide:nth-child(2){background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1920&q=90');}
+.slide:nth-child(3){background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=90');}
+.slide:nth-child(4){background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=90');}
+.slide:nth-child(5){background-image:url('https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1920&q=90');}
+.slide:nth-child(6){background-image:url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1920&q=90');}
+.slide:nth-child(7){background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=90');}
+.slide-caption{position:absolute;bottom:130px;right:60px;z-index:3;text-align:right;}
+.slide-caption-tag{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.slide-caption-title{font-family:'Playfair Display',serif;font-size:clamp(16px,1.8vw,24px);font-weight:300;color:var(--white);line-height:1.4;}
 .hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;max-width:780px;}
 .hero-eyebrow{display:flex;align-items:center;gap:14px;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;animation:fadeUp 1s 0.2s both;}
 .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
@@ -265,11 +270,13 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
 <!-- HERO -->
 <section id="hero">
   <div class="slides">
-    <div class="slide active"><div class="slide-overlay"></div></div>
-    <div class="slide"><div class="slide-overlay"></div></div>
-    <div class="slide"><div class="slide-overlay"></div></div>
-    <div class="slide"><div class="slide-overlay"></div></div>
-    <div class="slide"><div class="slide-overlay"></div></div>
+    <div class="slide active"><div class="slide-overlay"></div><div class="slide-caption"><div class="slide-caption-tag">Boca Raton · Florida</div><div class="slide-caption-title">Luxury Estates &amp;<br>Waterfront Living</div></div></div>
+    <div class="slide"><div class="slide-overlay"></div><div class="slide-caption"><div class="slide-caption-tag">Palm Beach · Florida</div><div class="slide-caption-title">Oceanfront Mansions<br>of Distinction</div></div></div>
+    <div class="slide"><div class="slide-overlay"></div><div class="slide-caption"><div class="slide-caption-tag">Intracoastal · Florida</div><div class="slide-caption-title">Waterfront Living<br>Redefined</div></div></div>
+    <div class="slide"><div class="slide-overlay"></div><div class="slide-caption"><div class="slide-caption-tag">South Florida</div><div class="slide-caption-title">Resort-Style Pool<br>Estates</div></div></div>
+    <div class="slide"><div class="slide-overlay"></div><div class="slide-caption"><div class="slide-caption-tag">Delray Beach · Florida</div><div class="slide-caption-title">Private Waterfront<br>Residences</div></div></div>
+    <div class="slide"><div class="slide-overlay"></div><div class="slide-caption"><div class="slide-caption-tag">Miami · Florida</div><div class="slide-caption-title">Biscayne Bay &amp;<br>Urban Luxury</div></div></div>
+    <div class="slide"><div class="slide-overlay"></div><div class="slide-caption"><div class="slide-caption-tag">Boca Prime Advisory</div><div class="slide-caption-title">Your Life. Your Future.<br>Our Guidance.</div></div></div>
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">Boca Raton, Florida</div>
@@ -286,6 +293,8 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
     <div class="dot" onclick="goToSlide(2)"></div>
     <div class="dot" onclick="goToSlide(3)"></div>
     <div class="dot" onclick="goToSlide(4)"></div>
+    <div class="dot" onclick="goToSlide(5)"></div>
+    <div class="dot" onclick="goToSlide(6)"></div>
   </div>
   <button class="slider-arrow prev" onclick="changeSlide(-1)">&#8592;</button>
   <button class="slider-arrow next" onclick="changeSlide(1)">&#8594;</button>
@@ -417,11 +426,11 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
 <section id="gallery"><div class="si">
   <div class="reveal"><div class="eyebrow">South Florida Living</div><h2 class="sec-title">The <em>Lifestyle</em></h2><div class="gline"></div><p class="sec-body">From waterfront estates to modern urban residences, South Florida offers an unmatched quality of life. Contact us for current available properties.</p></div>
   <div class="gallery-grid reveal">
-    <div class="g-item"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80" alt="Luxury Estate"><div class="g-overlay"><span class="g-label">Waterfront Estates</span></div></div>
-    <div class="g-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Modern Home"><div class="g-overlay"><span class="g-label">Modern Residences</span></div></div>
-    <div class="g-item"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Pool Home"><div class="g-overlay"><span class="g-label">Pool Estates</span></div></div>
-    <div class="g-item"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Luxury Interior"><div class="g-overlay"><span class="g-label">Premium Interiors</span></div></div>
-    <div class="g-item"><img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80" alt="Luxury Condo"><div class="g-overlay"><span class="g-label">Luxury Condos</span></div></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=960&q=90" alt="Boca Raton Mansion"><div class="g-overlay"><span class="g-label">Waterfront Mansion · Boca Raton</span></div></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=640&q=90" alt="Palm Beach Estate"><div class="g-overlay"><span class="g-label">Oceanfront Estate · Palm Beach</span></div></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=640&q=90" alt="Pool Estate"><div class="g-overlay"><span class="g-label">Resort Pool Estate · Delray Beach</span></div></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=640&q=90" alt="Miami Skyline"><div class="g-overlay"><span class="g-label">Biscayne Bay Skyline · Miami</span></div></div>
+    <div class="g-item"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=640&q=90" alt="West Palm"><div class="g-overlay"><span class="g-label">Waterfront Living · West Palm Beach</span></div></div>
   </div>
   <div style="text-align:center;margin-top:44px;"><a href="https://wa.me/17542622657" target="_blank" class="btn-gold">Inquire About Properties</a></div>
 </div></section>
@@ -504,7 +513,7 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
       <div class="channels">
         <a href="https://wa.me/17542622657" target="_blank" class="ch"><div class="ch-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div><div class="ch-label">WhatsApp — Fastest Response</div><div class="ch-value">+1 (754) 262-2657</div></div><div class="ch-arrow">→</div></a>
         <a href="https://instagram.com/bocaprimefl" target="_blank" class="ch"><div class="ch-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div><div><div class="ch-label">Instagram</div><div class="ch-value">@bocaprimefl</div></div><div class="ch-arrow">→</div></a>
-        <a href="mailto:info@bocaprime.com" class="ch"><div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><div class="ch-label">Email</div><div class="ch-value">info@bocaprime.com</div></div><div class="ch-arrow">→</div></a>
+        <a href="/cdn-cgi/l/email-protection#345d5a525b74565b575544465d59511a575b59" class="ch"><div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><div class="ch-label">Email</div><div class="ch-value"><span class="__cf_email__" data-cfemail="751c1b131a35171a161405071c18105b161a18">[email&#160;protected]</span></div></div><div class="ch-arrow">→</div></a>
         <div class="ch" style="cursor:default;"><div class="ch-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div><div class="ch-label">Location</div><div class="ch-value">Boca Raton, FL 33428</div></div></div>
       </div>
       <div class="contact-note"><span>✦</span><span>All conversations are private and without obligation. We respond within 24 hours.</span></div>
@@ -528,15 +537,15 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
     <div class="f-logo"><img src="logo.png" alt="Boca Prime"><p class="f-tagline">Private Real Estate & Life Advisory<br>South Florida</p></div>
     <div class="f-col"><h5>Services</h5><ul><li><a href="#services">Homes & Residential</a></li><li><a href="#services">Business Advisory</a></li><li><a href="#services">Investment Strategy</a></li><li><a href="#services">Relocation</a></li><li><a href="#services">International Clients</a></li></ul></div>
     <div class="f-col"><h5>Areas</h5><ul><li><a href="#areas">Boca Raton</a></li><li><a href="#areas">Delray Beach</a></li><li><a href="#areas">Palm Beach</a></li><li><a href="#areas">Fort Lauderdale</a></li><li><a href="#areas">Miami / Aventura</a></li></ul></div>
-    <div class="f-col"><h5>Contact</h5><ul><li><a href="https://wa.me/17542622657" target="_blank">WhatsApp</a></li><li><a href="https://instagram.com/bocaprimefl" target="_blank">@bocaprimefl</a></li><li><a href="mailto:info@bocaprime.com">info@bocaprime.com</a></li><li><a href="#contact">Send a Message</a></li></ul></div>
+    <div class="f-col"><h5>Contact</h5><ul><li><a href="https://wa.me/17542622657" target="_blank">WhatsApp</a></li><li><a href="https://instagram.com/bocaprimefl" target="_blank">@bocaprimefl</a></li><li><a href="/cdn-cgi/l/email-protection#c4adaaa2ab84a6aba7a5b4b6ada9a1eaa7aba9"><span class="__cf_email__" data-cfemail="167f787079567479757766647f7b733875797b">[email&#160;protected]</span></a></li><li><a href="#contact">Send a Message</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <p>© 2025 Boca Prime. All rights reserved. · Boca Raton, Florida 33428</p>
-    <div class="socials"><a href="https://wa.me/17542622657" target="_blank" class="soc">WA</a><a href="https://instagram.com/bocaprimefl" target="_blank" class="soc">IG</a><a href="mailto:info@bocaprime.com" class="soc">✉</a></div>
+    <div class="socials"><a href="https://wa.me/17542622657" target="_blank" class="soc">WA</a><a href="https://instagram.com/bocaprimefl" target="_blank" class="soc">IG</a><a href="/cdn-cgi/l/email-protection#573e393138173538343627253e3a327934383a" class="soc">✉</a></div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
@@ -547,10 +556,4 @@ const slides=document.querySelectorAll('.slide');
 const dots=document.querySelectorAll('.dot');
 let timer=setInterval(()=>changeSlide(1),5000);
 function goToSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active');}
-function changeSlide(d){clearInterval(timer);goToSlide((cur+d+slides.length)%slides.length);timer=setInterval(()=>changeSlide(1),5000);}
-const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('revealed');});},{threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-function handleSubmit(){const b=document.getElementById('submitBtn');b.textContent='Message Sent ✓';b.style.background='#2a6a2a';b.style.cursor='default';}
-</script>
-</body>
-</html>
+function changeSlide(d){clearInterval(timer);goToSlide((cur+d+slides.length)%slides.length);timer=setIn
