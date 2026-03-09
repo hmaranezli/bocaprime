@@ -537,15 +537,15 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
     <div class="f-logo"><img src="logo.png" alt="Boca Prime"><p class="f-tagline">Private Real Estate & Life Advisory<br>South Florida</p></div>
     <div class="f-col"><h5>Services</h5><ul><li><a href="#services">Homes & Residential</a></li><li><a href="#services">Business Advisory</a></li><li><a href="#services">Investment Strategy</a></li><li><a href="#services">Relocation</a></li><li><a href="#services">International Clients</a></li></ul></div>
     <div class="f-col"><h5>Areas</h5><ul><li><a href="#areas">Boca Raton</a></li><li><a href="#areas">Delray Beach</a></li><li><a href="#areas">Palm Beach</a></li><li><a href="#areas">Fort Lauderdale</a></li><li><a href="#areas">Miami / Aventura</a></li></ul></div>
-    <div class="f-col"><h5>Contact</h5><ul><li><a href="https://wa.me/17542622657" target="_blank">WhatsApp</a></li><li><a href="https://instagram.com/bocaprimefl" target="_blank">@bocaprimefl</a></li><li><a href="/cdn-cgi/l/email-protection#c4adaaa2ab84a6aba7a5b4b6ada9a1eaa7aba9"><span class="__cf_email__" data-cfemail="167f787079567479757766647f7b733875797b">[email&#160;protected]</span></a></li><li><a href="#contact">Send a Message</a></li></ul></div>
+    <div class="f-col"><h5>Contact</h5><ul><li><a href="https://wa.me/17542622657" target="_blank">WhatsApp</a></li><li><a href="https://instagram.com/bocaprimefl" target="_blank">@bocaprimefl</a></li><li><a href="mailto:info@bocaprime.com">info@bocaprime.com</a></li><li><a href="#contact">Send a Message</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <p>© 2025 Boca Prime. All rights reserved. · Boca Raton, Florida 33428</p>
-    <div class="socials"><a href="https://wa.me/17542622657" target="_blank" class="soc">WA</a><a href="https://instagram.com/bocaprimefl" target="_blank" class="soc">IG</a><a href="/cdn-cgi/l/email-protection#573e393138173538343627253e3a327934383a" class="soc">✉</a></div>
+    <div class="socials"><a href="https://wa.me/17542622657" target="_blank" class="soc">WA</a><a href="https://instagram.com/bocaprimefl" target="_blank" class="soc">IG</a><a href="mailto:info@bocaprime.com" class="soc">✉</a></div>
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
@@ -556,4 +556,10 @@ const slides=document.querySelectorAll('.slide');
 const dots=document.querySelectorAll('.dot');
 let timer=setInterval(()=>changeSlide(1),5000);
 function goToSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active');}
-function changeSlide(d){clearInterval(timer);goToSlide((cur+d+slides.length)%slides.length);timer=setIn
+function changeSlide(d){clearInterval(timer);goToSlide((cur+d+slides.length)%slides.length);timer=setInterval(()=>changeSlide(1),5000);}
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('revealed');});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+function handleSubmit(){const b=document.getElementById('submitBtn');b.textContent='Message Sent ✓';b.style.background='#2a6a2a';b.style.cursor='default';}
+</script>
+</body>
+</html>
