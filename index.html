@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boca Prime | Luxury Real Estate & Advisory · South Florida</title>
 <meta name="description" content="Boca Prime — Private real estate & life advisory. Homes, business, investment, relocation across South Florida's most prestigious communities.">
+<meta property="og:title" content="Boca Prime | Luxury Real Estate & Advisory">
+<meta property="og:description" content="Private real estate & life advisory for those building their future in South Florida.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#0b1a2e;--deep:#06101e;--gold:#c4923a;--gold2:#dbb06a;--gold3:#a07828;
-  --gold-border:rgba(196,146,58,0.2);--gold-glow:rgba(196,146,58,0.1);
-  --cream:#f8f4ee;--white:#fff;--muted:#8b909e;--dark-muted:#3a3f4a;
+  --gold-border:rgba(196,146,58,0.2);--gold-glow:rgba(196,146,58,0.08);
+  --cream:#f8f4ee;--white:#fff;--muted:#8b909e;--muted2:#444;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -22,7 +25,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 nav.scrolled{background:rgba(6,16,30,0.97);padding:16px 60px;border-bottom:1px solid var(--gold-border);backdrop-filter:blur(16px);}
 .nav-logo img{height:44px;width:auto;filter:drop-shadow(0 2px 10px rgba(196,146,58,0.35));transition:height 0.4s;}
 nav.scrolled .nav-logo img{height:32px;}
-.nav-links{display:flex;gap:34px;list-style:none;}
+.nav-links{display:flex;gap:30px;list-style:none;}
 .nav-links a{color:rgba(248,244,238,0.65);text-decoration:none;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;transition:color 0.3s;}
 .nav-links a:hover{color:var(--gold);}
 .nav-cta{background:transparent;border:1px solid var(--gold-border);color:var(--gold);padding:10px 24px;text-decoration:none;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;transition:all 0.3s;}
@@ -37,16 +40,15 @@ nav.scrolled .nav-logo img{height:32px;}
 /* ── HERO SLIDER ── */
 #hero{position:relative;height:100vh;overflow:hidden;}
 .slides{position:absolute;inset:0;}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center;}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease;background-size:cover;background-position:center;}
 .slide.active{opacity:1;}
-.slide-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(6,16,30,0.88) 0%,rgba(6,16,30,0.6) 50%,rgba(6,16,30,0.3) 100%);}
+.slide-overlay{position:absolute;inset:0;background:linear-gradient(110deg,rgba(6,16,30,0.88) 0%,rgba(6,16,30,0.55) 55%,rgba(6,16,30,0.25) 100%);}
 .slide:nth-child(1){background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1800&q=80');}
 .slide:nth-child(2){background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1800&q=80');}
 .slide:nth-child(3){background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1800&q=80');}
 .slide:nth-child(4){background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=80');}
 .slide:nth-child(5){background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1800&q=80');}
-
-.hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;max-width:760px;}
+.hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 60px;max-width:780px;}
 .hero-eyebrow{display:flex;align-items:center;gap:14px;font-size:9px;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;animation:fadeUp 1s 0.2s both;}
 .hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);}
 .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,78px);font-weight:300;line-height:1.08;color:var(--white);margin-bottom:20px;animation:fadeUp 1s 0.35s both;}
@@ -57,23 +59,16 @@ nav.scrolled .nav-logo img{height:32px;}
 .btn-gold:hover{background:var(--gold2);transform:translateY(-2px);}
 .btn-ghost{border:1px solid rgba(248,244,238,0.3);color:var(--cream);padding:15px 38px;text-decoration:none;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;transition:all 0.3s;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-
-/* Slider dots */
 .slider-dots{position:absolute;bottom:44px;left:60px;z-index:3;display:flex;gap:10px;}
 .dot{width:24px;height:2px;background:rgba(248,244,238,0.3);cursor:pointer;transition:all 0.4s;}
 .dot.active{background:var(--gold);width:40px;}
-
-/* Slider arrows */
 .slider-arrow{position:absolute;top:50%;z-index:3;transform:translateY(-50%);width:44px;height:44px;border:1px solid rgba(248,244,238,0.2);background:transparent;color:var(--cream);font-size:16px;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
 .slider-arrow:hover{border-color:var(--gold);color:var(--gold);}
 .slider-arrow.prev{left:20px;}
 .slider-arrow.next{right:20px;}
-
-/* Stats */
 .hero-stats{position:absolute;bottom:44px;right:60px;z-index:2;display:flex;gap:44px;animation:fadeUp 1s 0.8s both;}
 .stat-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:300;color:var(--gold);line-height:1;}
 .stat-label{font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-top:5px;}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 
 /* ── MARQUEE ── */
@@ -114,49 +109,68 @@ nav.scrolled .nav-logo img{height:32px;}
 .svc-card:hover{background:rgba(196,146,58,0.05);transform:translateY(-4px);}
 .svc-card:hover::after{transform:scaleX(1);}
 .svc-num{font-family:'Playfair Display',serif;font-size:46px;font-weight:300;color:rgba(196,146,58,0.08);line-height:1;margin-bottom:18px;}
-.svc-icon{font-size:24px;margin-bottom:14px;}
+.svc-icon-wrap{width:44px;height:44px;border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+.svc-icon-wrap svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.5;}
 .svc-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:400;color:var(--gold2);margin-bottom:12px;}
 .svc-body{font-size:12px;line-height:1.85;color:var(--muted);}
 
+/* ── WHY FLORIDA ── */
+#florida{background:var(--deep);position:relative;overflow:hidden;}
+#florida::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1800&q=60') center/cover no-repeat;opacity:0.06;}
+.florida-inner{position:relative;z-index:1;}
+.florida-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:0;}
+.florida-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:44px;}
+.fl-stat{background:rgba(255,255,255,0.03);border:1px solid var(--gold-border);padding:28px 24px;}
+.fl-stat-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:300;color:var(--gold);line-height:1;margin-bottom:6px;}
+.fl-stat-label{font-size:10px;color:var(--muted);line-height:1.5;}
+.florida-reasons{display:flex;flex-direction:column;gap:0;}
+.fl-reason{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid rgba(196,146,58,0.08);}
+.fl-reason:last-child{border-bottom:none;}
+.fl-reason-icon{width:40px;height:40px;flex-shrink:0;border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;}
+.fl-reason-icon svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5;}
+.fl-reason-title{font-size:13px;font-weight:500;color:var(--cream);margin-bottom:4px;}
+.fl-reason-desc{font-size:11px;line-height:1.75;color:var(--muted);}
+
 /* ── GALLERY ── */
-#gallery{background:var(--deep);}
+#gallery{background:var(--navy);}
 .gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:260px 260px;gap:10px;margin-top:52px;}
 .g-item{overflow:hidden;position:relative;}
 .g-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s;}
 .g-item:hover img{transform:scale(1.06);}
 .g-item:first-child{grid-row:1/3;}
-.g-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,16,30,0.7) 0%,transparent 60%);display:flex;align-items:flex-end;padding:18px;opacity:0;transition:opacity 0.35s;}
+.g-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,16,30,0.75) 0%,transparent 60%);display:flex;align-items:flex-end;padding:18px;opacity:0;transition:opacity 0.35s;}
 .g-item:hover .g-overlay{opacity:1;}
 .g-label{font-size:11px;letter-spacing:0.1em;color:var(--cream);}
 
 /* ── AREAS ── */
-#areas{background:var(--navy);}
+#areas{background:var(--deep);}
 .areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:52px;}
 .area-card{background:rgba(255,255,255,0.03);border:1px solid var(--gold-border);padding:32px 26px;transition:all 0.4s;position:relative;overflow:hidden;}
 .area-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transform-origin:center;transition:transform 0.4s;}
 .area-card:hover{background:rgba(196,146,58,0.05);transform:translateY(-3px);}
 .area-card:hover::before{transform:scaleX(1);}
-.area-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--cream);margin-bottom:8px;}
+.area-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--cream);margin-bottom:6px;}
 .area-tag{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
 .area-desc{font-size:11px;line-height:1.75;color:var(--muted);}
 
 /* ── PROCESS ── */
-#process{background:var(--deep);}
+#process{background:var(--navy);}
 .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:52px;background:var(--gold-border);}
-.proc-step{background:var(--deep);padding:36px 28px;}
+.proc-step{background:var(--navy);padding:36px 28px;}
 .step-num{font-family:'Playfair Display',serif;font-size:50px;font-weight:300;color:rgba(196,146,58,0.09);line-height:1;margin-bottom:14px;}
 .step-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:400;color:var(--gold2);margin-bottom:8px;}
 .step-body{font-size:11px;line-height:1.8;color:var(--muted);}
 
-/* ── WHY ── */
-#why{background:var(--navy);}
+/* ── WHY US ── */
+#why{background:var(--deep);}
 .why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;margin-top:44px;}
 .why-box{background:rgba(255,255,255,0.03);border:1px solid var(--gold-border);padding:44px;position:relative;}
 .why-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .why-items{display:flex;flex-direction:column;}
 .why-item{display:flex;gap:18px;padding:20px 0;border-bottom:1px solid rgba(196,146,58,0.07);}
 .why-item:last-child{border-bottom:none;}
-.why-icon{font-size:16px;flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--gold);}
+.why-icon{width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:1px solid var(--gold-border);}
+.why-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.5;}
 .why-title{font-size:13px;font-weight:500;color:var(--cream);margin-bottom:4px;}
 .why-desc{font-size:11px;line-height:1.75;color:var(--muted);}
 .test-card{background:rgba(255,255,255,0.03);border:1px solid var(--gold-border);padding:40px;position:relative;}
@@ -169,7 +183,7 @@ nav.scrolled .nav-logo img{height:32px;}
 .test-role{font-size:10px;color:var(--muted);}
 
 /* ── CONTACT ── */
-#contact{background:var(--deep);}
+#contact{background:var(--navy);}
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;}
 .channels{display:flex;flex-direction:column;gap:2px;margin:28px 0;}
 .ch{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.03);border:1px solid var(--gold-border);padding:18px 22px;text-decoration:none;transition:all 0.3s;}
@@ -219,8 +233,8 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
 .revealed{opacity:1;transform:translateY(0);}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1024px){.si{padding:80px 36px;}.about-wrap,.why-wrap,.contact-wrap{grid-template-columns:1fr;}.svc-grid{grid-template-columns:1fr 1fr;}.proc-grid{grid-template-columns:1fr 1fr;}.areas-grid{grid-template-columns:1fr 1fr;}.footer-top{grid-template-columns:1fr 1fr;gap:36px;}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.g-item:first-child{grid-row:auto;}}
-@media(max-width:768px){nav{padding:18px 22px;}nav.scrolled{padding:12px 22px;}.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.si{padding:64px 22px;}.hero-content{padding:0 22px;}.hero-stats{right:22px;gap:24px;}.slider-dots{left:22px;}.svc-grid{grid-template-columns:1fr;}.areas-grid{grid-template-columns:1fr;}.proc-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;gap:28px;padding:36px 22px 22px;}.footer-bottom{padding:14px 22px 28px;flex-direction:column;gap:14px;text-align:center;}.form-row{grid-template-columns:1fr;}.svc-header{flex-direction:column;gap:14px;}.hero-stats{display:none;}}
+@media(max-width:1024px){.si{padding:80px 36px;}.about-wrap,.why-wrap,.contact-wrap,.florida-grid{grid-template-columns:1fr;}.svc-grid{grid-template-columns:1fr 1fr;}.proc-grid{grid-template-columns:1fr 1fr;}.areas-grid{grid-template-columns:1fr 1fr;}.footer-top{grid-template-columns:1fr 1fr;gap:36px;}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}.g-item:first-child{grid-row:auto;}}
+@media(max-width:768px){nav{padding:18px 22px;}nav.scrolled{padding:12px 22px;}.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.si{padding:64px 22px;}.hero-content{padding:0 22px;}.hero-stats{display:none;}.slider-dots{left:22px;}.svc-grid{grid-template-columns:1fr;}.areas-grid{grid-template-columns:1fr;}.proc-grid{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;gap:28px;padding:36px 22px 22px;}.footer-bottom{padding:14px 22px 28px;flex-direction:column;gap:14px;text-align:center;}.form-row{grid-template-columns:1fr;}.svc-header{flex-direction:column;gap:14px;}.florida-stats{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
@@ -230,7 +244,7 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#services" onclick="closeMobile()">Services</a>
-  <a href="#gallery" onclick="closeMobile()">Properties</a>
+  <a href="#florida" onclick="closeMobile()">Why Florida</a>
   <a href="#areas" onclick="closeMobile()">Areas</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
@@ -240,7 +254,7 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#gallery">Properties</a></li>
+    <li><a href="#florida">Why Florida</a></li>
     <li><a href="#areas">Areas</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -248,6 +262,7 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
   <div class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="slides">
     <div class="slide active"><div class="slide-overlay"></div></div>
@@ -259,7 +274,7 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
   <div class="hero-content">
     <div class="hero-eyebrow">Boca Raton, Florida</div>
     <h1 class="hero-h1">Your Gateway to<br><em>Luxury Living</em><br>in South Florida</h1>
-    <p class="hero-p">Private real estate & life advisory for those building their future in South Florida. Homes, business, investment, and relocation — all in one trusted partnership.</p>
+    <p class="hero-p">Private real estate & life advisory for those building their future in South Florida. Homes, business, investment, and relocation — one trusted partnership.</p>
     <div class="hero-btns">
       <a href="https://wa.me/17542622657" target="_blank" class="btn-gold">Start a Conversation</a>
       <a href="#services" class="btn-ghost">Our Services</a>
@@ -281,12 +296,14 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
   </div>
 </section>
 
+<!-- MARQUEE -->
 <div class="marquee-wrap"><div class="marquee-track"><span class="m-item">Homes & Residential</span><span class="m-item">Business Advisory</span><span class="m-item">Investment Strategy</span><span class="m-item">Relocation Services</span><span class="m-item">Legal & Financial Network</span><span class="m-item">Boca Raton</span><span class="m-item">Delray Beach</span><span class="m-item">Palm Beach</span><span class="m-item">Fort Lauderdale</span><span class="m-item">Miami</span><span class="m-item">Homes & Residential</span><span class="m-item">Business Advisory</span><span class="m-item">Investment Strategy</span><span class="m-item">Relocation Services</span><span class="m-item">Legal & Financial Network</span><span class="m-item">Boca Raton</span><span class="m-item">Delray Beach</span><span class="m-item">Palm Beach</span><span class="m-item">Fort Lauderdale</span><span class="m-item">Miami</span></div></div>
 
+<!-- ABOUT -->
 <section id="about"><div class="si"><div class="about-wrap">
   <div class="reveal">
     <div class="about-img-wrap">
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6d8f4b03?w=900&q=80" alt="South Florida Luxury Home">
+      <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=900&q=80" alt="South Florida Luxury Home">
     </div>
     <div class="about-frame"></div>
     <div class="about-badge"><div class="about-badge-num">10+</div><div class="about-badge-label">Years of Excellence</div></div>
@@ -295,8 +312,8 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
     <div class="eyebrow">Who We Are</div>
     <h2 class="sec-title">More Than Real Estate.<br><em>A Life Advisory.</em></h2>
     <div class="gline"></div>
-    <p class="sec-body">Boca Prime is a boutique real estate and life advisory firm based in Boca Raton. We serve individuals, families, and investors who want more than a transaction — they want a trusted guide for every step of building their Florida life.</p>
-    <p class="sec-body" style="margin-top:12px;">Whether you're buying a home, starting a business, investing capital, or relocating your family — we connect you with the right properties, attorneys, accountants, and community.</p>
+    <p class="sec-body">Boca Prime is a boutique real estate and life advisory firm based in Boca Raton. We serve individuals, families, and investors who want more than a transaction — a trusted guide for every step of building their Florida life.</p>
+    <p class="sec-body" style="margin-top:12px;">Whether buying a home, starting a business, investing capital, or relocating your family — we connect you with the right properties, attorneys, accountants, and community.</p>
     <ul class="about-list">
       <li>Residential homes, condos & waterfront properties</li>
       <li>Business acquisition and franchise advisory</li>
@@ -308,21 +325,95 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
   </div>
 </div></div></section>
 
+<!-- SERVICES -->
 <section id="services"><div class="si">
   <div class="svc-header reveal">
     <div><div class="eyebrow">What We Do</div><h2 class="sec-title">Our <em>Services</em></h2></div>
     <p style="max-width:300px;font-size:12px;color:var(--muted);line-height:1.8;text-align:right;">Every engagement is personal, discreet, and built around your specific goals.</p>
   </div>
   <div class="svc-grid">
-    <div class="svc-card reveal"><div class="svc-num">01</div><div class="svc-icon">🏡</div><div class="svc-title">Homes & Residential</div><p class="svc-body">Curated property search, negotiation, and closing support. MLS listings and exclusive off-market properties. No pressure — only the right fit.</p></div>
-    <div class="svc-card reveal"><div class="svc-num">02</div><div class="svc-icon">💼</div><div class="svc-title">Business Advisory</div><p class="svc-body">Thinking of buying a Florida business? Insider analysis on retail, franchise, and commercial ventures — with real numbers and honest risk assessments.</p></div>
-    <div class="svc-card reveal"><div class="svc-num">03</div><div class="svc-icon">📈</div><div class="svc-title">Investment Strategy</div><p class="svc-body">Data-driven advisory for South Florida assets. Rent potential, HOA, taxes, liquidity — the full picture before you commit.</p></div>
-    <div class="svc-card reveal"><div class="svc-num">04</div><div class="svc-icon">✈️</div><div class="svc-title">Relocation Services</div><p class="svc-body">Moving to Florida? We guide families and executives through every step — neighborhoods, schools, lifestyle, community. Feel at home from day one.</p></div>
-    <div class="svc-card reveal"><div class="svc-num">05</div><div class="svc-icon">⚖️</div><div class="svc-title">Legal & Financial Network</div><p class="svc-body">Vetted attorneys, CPAs, and mortgage brokers — the right expert at every stage of your transaction.</p></div>
-    <div class="svc-card reveal"><div class="svc-num">06</div><div class="svc-icon">🌍</div><div class="svc-title">International Clients</div><p class="svc-body">Specialized support for foreign buyers navigating U.S. real estate — ownership structure, financing, and legal requirements, in your language.</p></div>
+    <div class="svc-card reveal">
+      <div class="svc-num">01</div>
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="svc-title">Homes & Residential</div>
+      <p class="svc-body">Curated property search, negotiation, and closing support. MLS listings and exclusive off-market properties. No pressure — only the right fit.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">02</div>
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+      <div class="svc-title">Business Advisory</div>
+      <p class="svc-body">Insider analysis on retail, franchise, and commercial ventures — real numbers and honest risk assessments before you invest.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">03</div>
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+      <div class="svc-title">Investment Strategy</div>
+      <p class="svc-body">Data-driven advisory for South Florida assets. Rent potential, HOA, taxes, liquidity — the full picture before you commit.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">04</div>
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="svc-title">Relocation Services</div>
+      <p class="svc-body">We guide families and executives through every step — neighborhoods, schools, lifestyle, community. Feel at home from day one.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">05</div>
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+      <div class="svc-title">Legal & Financial Network</div>
+      <p class="svc-body">Vetted attorneys, CPAs, and mortgage brokers — the right expert at every stage of your transaction, without the guesswork.</p>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-num">06</div>
+      <div class="svc-icon-wrap"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+      <div class="svc-title">International Clients</div>
+      <p class="svc-body">Specialized support for foreign buyers navigating U.S. real estate — ownership structure, financing, and legal requirements, in your language.</p>
+    </div>
   </div>
 </div></section>
 
+<!-- WHY FLORIDA -->
+<section id="florida"><div class="si florida-inner">
+  <div class="florida-grid">
+    <div class="reveal">
+      <div class="eyebrow">Why Florida</div>
+      <h2 class="sec-title">The World's Most <em>Desirable</em> Address</h2>
+      <div class="gline"></div>
+      <p class="sec-body">Florida is not just a destination — it's a strategic decision. With no state income tax, year-round sunshine, a booming economy, and one of the fastest-growing populations in the U.S., South Florida represents a once-in-a-generation opportunity for buyers and investors alike.</p>
+      <div class="florida-stats">
+        <div class="fl-stat"><div class="fl-stat-num">0%</div><div class="fl-stat-label">State Income Tax<br>Keep more of what you earn</div></div>
+        <div class="fl-stat"><div class="fl-stat-num">365</div><div class="fl-stat-label">Days of Sunshine<br>World-class outdoor lifestyle</div></div>
+        <div class="fl-stat"><div class="fl-stat-num">$1.7T</div><div class="fl-stat-label">State GDP<br>4th largest U.S. economy</div></div>
+        <div class="fl-stat"><div class="fl-stat-num">+1,000</div><div class="fl-stat-label">New Residents Daily<br>Fastest growing state</div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="florida-reasons">
+        <div class="fl-reason">
+          <div class="fl-reason-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+          <div><div class="fl-reason-title">Tax Advantages</div><div class="fl-reason-desc">No state income tax, no inheritance tax. Florida is one of the most tax-friendly states in the U.S. — a key reason why high-net-worth individuals and businesses are relocating here.</div></div>
+        </div>
+        <div class="fl-reason">
+          <div class="fl-reason-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
+          <div><div class="fl-reason-title">Real Estate Appreciation</div><div class="fl-reason-desc">South Florida property values have consistently outperformed national averages. Palm Beach County saw over 15% appreciation in recent years, with strong fundamentals continuing.</div></div>
+        </div>
+        <div class="fl-reason">
+          <div class="fl-reason-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg></div>
+          <div><div class="fl-reason-title">Climate & Lifestyle</div><div class="fl-reason-desc">Year-round warm weather, world-class beaches, golf courses, restaurants, and cultural events. South Florida offers a lifestyle that few places in the world can match.</div></div>
+        </div>
+        <div class="fl-reason">
+          <div class="fl-reason-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><div class="fl-reason-title">International Community</div><div class="fl-reason-desc">South Florida is home to one of the largest Turkish communities in the U.S., alongside Brazilian, Venezuelan, Israeli, and European communities — making it truly international.</div></div>
+        </div>
+        <div class="fl-reason">
+          <div class="fl-reason-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+          <div><div class="fl-reason-title">Business Opportunity</div><div class="fl-reason-desc">Florida ranks among the top U.S. states for business. Low regulation, growing population, and strong consumer spending create fertile ground for entrepreneurs and investors.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- GALLERY -->
 <section id="gallery"><div class="si">
   <div class="reveal"><div class="eyebrow">South Florida Living</div><h2 class="sec-title">The <em>Lifestyle</em></h2><div class="gline"></div><p class="sec-body">From waterfront estates to modern urban residences, South Florida offers an unmatched quality of life. Contact us for current available properties.</p></div>
   <div class="gallery-grid reveal">
@@ -335,38 +426,56 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
   <div style="text-align:center;margin-top:44px;"><a href="https://wa.me/17542622657" target="_blank" class="btn-gold">Inquire About Properties</a></div>
 </div></section>
 
+<!-- AREAS -->
 <section id="areas"><div class="si">
   <div class="reveal"><div class="eyebrow">Markets We Serve</div><h2 class="sec-title">Prime <em>Areas</em></h2></div>
   <div class="areas-grid">
-    <div class="area-card reveal"><div class="area-name">Boca Raton</div><div class="area-tag">Headquarters</div><p class="area-desc">Gated communities, A-rated schools, golf courses, and a sophisticated lifestyle. One of Florida's most desirable addresses.</p></div>
-    <div class="area-card reveal"><div class="area-name">Delray Beach</div><div class="area-tag">Coastal Lifestyle</div><p class="area-desc">Atlantic Avenue, beach lifestyle, walkable neighborhoods. Luxury and community balance — growing rapidly in value.</p></div>
-    <div class="area-card reveal"><div class="area-name">Palm Beach</div><div class="area-tag">Ultra-Luxury</div><p class="area-desc">Ultra-luxury waterfront estates, historic architecture, one of the wealthiest zip codes in America.</p></div>
-    <div class="area-card reveal"><div class="area-name">Fort Lauderdale</div><div class="area-tag">Yachting Capital</div><p class="area-desc">The yachting capital of the world. Deep waterways, booming downtown, strong investment fundamentals.</p></div>
-    <div class="area-card reveal"><div class="area-name">West Palm Beach</div><div class="area-tag">Business Hub</div><p class="area-desc">Growing business and culture hub. Strong commercial real estate and residential upside at accessible prices.</p></div>
+    <div class="area-card reveal"><div class="area-name">Boca Raton</div><div class="area-tag">Headquarters</div><p class="area-desc">Gated communities, A-rated schools, golf courses, and a sophisticated lifestyle. One of Florida's most desirable addresses for families and executives.</p></div>
+    <div class="area-card reveal"><div class="area-name">Delray Beach</div><div class="area-tag">Coastal Lifestyle</div><p class="area-desc">Atlantic Avenue, beach lifestyle, walkable neighborhoods. A vibrant balance of luxury and community — rapidly growing in value.</p></div>
+    <div class="area-card reveal"><div class="area-name">Palm Beach</div><div class="area-tag">Ultra-Luxury</div><p class="area-desc">Ultra-luxury waterfront estates, historic architecture, one of the wealthiest zip codes in America. For the most discerning buyers.</p></div>
+    <div class="area-card reveal"><div class="area-name">Fort Lauderdale</div><div class="area-tag">Yachting Capital</div><p class="area-desc">The yachting capital of the world. Deep waterways, booming downtown, and strong investment fundamentals at all price points.</p></div>
+    <div class="area-card reveal"><div class="area-name">West Palm Beach</div><div class="area-tag">Business Hub</div><p class="area-desc">Growing business and culture hub. Strong commercial real estate and residential upside — Palm Beach lifestyle at accessible prices.</p></div>
     <div class="area-card reveal"><div class="area-name">Miami / Aventura</div><div class="area-tag">International Hub</div><p class="area-desc">International capital, luxury condos, vibrant culture. The gateway for global investors entering the Florida market.</p></div>
   </div>
 </div></section>
 
+<!-- PROCESS -->
 <section id="process"><div class="si">
   <div class="reveal"><div class="eyebrow">How It Works</div><h2 class="sec-title">The Boca Prime <em>Process</em></h2></div>
   <div class="proc-grid reveal">
     <div class="proc-step"><div class="step-num">01</div><div class="step-title">Free Consultation</div><p class="step-body">A private conversation — via WhatsApp, call, or in person — to understand your goals, timeline, and budget. No obligation, no pressure.</p></div>
-    <div class="proc-step"><div class="step-num">02</div><div class="step-title">Tailored Strategy</div><p class="step-body">A customized plan specific to you — curated property list, business evaluation, or full investment analysis.</p></div>
-    <div class="proc-step"><div class="step-num">03</div><div class="step-title">Expert Introductions</div><p class="step-body">We connect you with vetted attorneys, CPAs, lenders, and inspectors — the right team at every stage.</p></div>
+    <div class="proc-step"><div class="step-num">02</div><div class="step-title">Tailored Strategy</div><p class="step-body">A fully customized plan — curated property list, business evaluation, or investment analysis built specifically around your goals.</p></div>
+    <div class="proc-step"><div class="step-num">03</div><div class="step-title">Expert Introductions</div><p class="step-body">We connect you with vetted attorneys, CPAs, lenders, and inspectors — the right professionals at every stage.</p></div>
     <div class="proc-step"><div class="step-num">04</div><div class="step-title">Closing & Beyond</div><p class="step-body">We guide you through closing and remain available after — for follow-up, referrals, or your next South Florida move.</p></div>
   </div>
 </div></section>
 
+<!-- WHY US -->
 <section id="why"><div class="si">
   <div class="reveal"><div class="eyebrow">Why Boca Prime</div><h2 class="sec-title">A Different Kind of <em>Advisory</em></h2></div>
   <div class="why-wrap">
     <div class="why-box reveal">
       <div class="why-items">
-        <div class="why-item"><div class="why-icon">◈</div><div><div class="why-title">Boutique & Personal</div><div class="why-desc">Limited clients at a time. Dedicated attention — not a number in a large brokerage queue.</div></div></div>
-        <div class="why-item"><div class="why-icon">◉</div><div><div class="why-title">Honest, Not Hype</div><div class="why-desc">Real numbers, realistic yields, honest risk assessments. We'd rather lose a deal than mislead a client.</div></div></div>
-        <div class="why-item"><div class="why-icon">◆</div><div><div class="why-title">Full Ecosystem Access</div><div class="why-desc">Attorney, CPA, lender, inspector — vetted professionals for every stage of your journey.</div></div></div>
-        <div class="why-item"><div class="why-icon">◇</div><div><div class="why-title">Bilingual Advisory</div><div class="why-desc">English & Turkish spoken. We understand the specific needs of international buyers in the U.S. market.</div></div></div>
-        <div class="why-item"><div class="why-icon">✦</div><div><div class="why-title">Beyond the Transaction</div><div class="why-desc">Available after closing — for referrals, questions, and your next move. A long-term relationship.</div></div></div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div><div class="why-title">Boutique & Personal</div><div class="why-desc">Limited clients at a time. Dedicated attention — not a number in a large brokerage queue.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div><div class="why-title">Honest, Not Hype</div><div class="why-desc">Real numbers, realistic yields, honest risk assessments. We'd rather lose a deal than mislead a client.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><div class="why-title">Full Ecosystem Access</div><div class="why-desc">Attorney, CPA, lender, inspector — vetted professionals for every stage of your journey.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+          <div><div class="why-title">Bilingual Advisory</div><div class="why-desc">English & Turkish spoken. We understand the specific needs of international buyers navigating the U.S. market.</div></div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="why-title">Beyond the Transaction</div><div class="why-desc">Available after closing — for referrals, questions, and your next move. A long-term relationship, not a one-time sale.</div></div>
+        </div>
       </div>
     </div>
     <div class="reveal">
@@ -384,6 +493,7 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
   </div>
 </div></section>
 
+<!-- CONTACT -->
 <section id="contact"><div class="si">
   <div class="contact-wrap">
     <div class="reveal">
@@ -412,6 +522,7 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
   </div>
 </div></section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div class="f-logo"><img src="logo.png" alt="Boca Prime"><p class="f-tagline">Private Real Estate & Life Advisory<br>South Florida</p></div>
@@ -426,43 +537,20 @@ footer{background:var(--deep);border-top:1px solid var(--gold-border);}
 </footer>
 
 <script>
-// Nav
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
-
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
-
-// Mobile menu
 function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('open');}
 function closeMobile(){document.getElementById('mobileMenu').classList.remove('open');}
-
-// Slider
-let currentSlide=0;
+let cur=0;
 const slides=document.querySelectorAll('.slide');
 const dots=document.querySelectorAll('.dot');
-let autoSlide=setInterval(()=>changeSlide(1),5000);
-
-function goToSlide(n){
-  slides[currentSlide].classList.remove('active');
-  dots[currentSlide].classList.remove('active');
-  currentSlide=n;
-  slides[currentSlide].classList.add('active');
-  dots[currentSlide].classList.add('active');
-}
-function changeSlide(dir){
-  clearInterval(autoSlide);
-  let next=(currentSlide+dir+slides.length)%slides.length;
-  goToSlide(next);
-  autoSlide=setInterval(()=>changeSlide(1),5000);
-}
-
-// Reveal
-const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('revealed');});},{threshold:0.08});
+let timer=setInterval(()=>changeSlide(1),5000);
+function goToSlide(n){slides[cur].classList.remove('active');dots[cur].classList.remove('active');cur=n;slides[cur].classList.add('active');dots[cur].classList.add('active');}
+function changeSlide(d){clearInterval(timer);goToSlide((cur+d+slides.length)%slides.length);timer=setInterval(()=>changeSlide(1),5000);}
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('revealed');});},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Form
-function handleSubmit(){const btn=document.getElementById('submitBtn');btn.textContent='Message Sent ✓';btn.style.background='#2a6a2a';btn.style.cursor='default';}
+function handleSubmit(){const b=document.getElementById('submitBtn');b.textContent='Message Sent ✓';b.style.background='#2a6a2a';b.style.cursor='default';}
 </script>
 </body>
 </html>
